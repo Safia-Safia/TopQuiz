@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="60dp"
+    android:layout_marginBottom="40dp"
+    android:orientation="vertical"
+    tools:context=".Controller.GameActivity" >
+
+    <TextView
+        android:id="@+id/activity_main_greeting_txt"
+        android:layout_width="match_parent"
+        android:layout_height="87dp"
+        android:layout_marginTop="15dp"
+        android:text="Welcome ! What's your name ?"
+        android:padding="40dp"
+        android:textAlignment="center"
+        android:textColor="#266197"
+        android:layout_weight="4"
+        android:textSize="22sp"
+        android:gravity="center_horizontal" />
+
+    <EditText
+        android:id="@+id/activiy_main_name_input"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_weight="1"
+        android:textAlignment="center"
+        android:textColor="#048B9A"
+        android:hint="Please type your name"
+        />
+
+    <Button
+        android:id="@+id/activity_main_play_btn"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:padding="30dp"
+        android:textColor="#FEFEFE"
+        android:background="#266197"
+        android:text="Let's play !"
+        android:layout_weight="1"
+        />
+
+    <Button
+        android:id="@+id/activity_main_play_btn2"
+        android:layout_width="256dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:padding="30dp"
+        android:background="#BBD2E1"
+        android:textColor="#FEFEFE"
+        android:text="Last saved scores"
+        android:layout_weight="1"
+        />
+
+
+
+</LinearLayout>
