@@ -38,10 +38,7 @@ public class RankingAdapter extends RecyclerView.Adapter <RankingAdapter.MyViewH
 
     @Override
     public int getItemCount() {
-        if (mUserList.size() > maxPlayerView){
-            return maxPlayerView;
-        }else{
-            return this.mUserList.size();}
+        return this.mUserList.size();
     }
 
 

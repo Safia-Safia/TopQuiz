@@ -24,14 +24,13 @@
 
     <EditText
         android:id="@+id/activiy_main_name_input"
-        android:layout_width="match_parent"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_weight="1"
-        android:textAlignment="center"
-        android:textColor="#048B9A"
         android:hint="Please type your name"
-        />
+        android:textAlignment="center"
+        android:textColor="#048B9A" />
 
     <Button
         android:id="@+id/activity_main_play_btn"

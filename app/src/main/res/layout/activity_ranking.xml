@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="50dp"
+    android:layout_marginBottom="30dp"
+    android:layout_margin="10dp"
     tools:context=".Controller.RankingActivity"
     android:orientation="vertical">
 
@@ -12,28 +14,43 @@
         android:id="@+id/activity_main_greeting_txt"
         android:layout_width="match_parent"
         android:layout_height="87dp"
-        android:text="Player's ranking"
+        android:text="Ranking of the best players :"
         android:textAlignment="center"
         android:textColor="#01796F"
         android:textSize="30sp"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:gravity="center_horizontal" />
+        android:gravity="center_vertical"
+        tools:ignore="RtlCompat" />
+
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recyclerview"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="377dp"
+        android:layout_height="521dp"
+        android:layout_marginTop="100dp" />
 
     <Button
-        android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:id="@+id/activity_asc_btn"
+        android:layout_width="169dp"
+        android:layout_height="75dp"
+        android:layout_alignParentBottom="true"
         android:layout_gravity="center_horizontal"
-        android:text="Play Again ?"
-        android:padding="30dp"
-        android:id="@+id/activity_better_btn"
+        android:layout_marginBottom="19dp"
         android:background="#FFFFFF"
+        android:text="Ascendent"
         android:textAppearance="?android:attr/textAppearanceLarge"
-        android:textColor="#01796F"/>
+        android:textColor="#01796F" />
 
+    <Button
+        android:id="@+id/activity_az_btn"
+        android:layout_width="169dp"
+        android:layout_height="75dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="-6dp"
+        android:layout_marginBottom="161dp"
+        android:background="#FFFFFF"
+        android:text="Play Agaiin"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="#01796F" />
 
-</LinearLayout>
+</RelativeLayout>

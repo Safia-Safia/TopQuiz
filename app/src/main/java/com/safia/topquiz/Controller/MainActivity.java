@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
     private SharedPreferences mPreferences;
 
     public static final String PREFERENCE_KEY_NAME = "PREFERENCE_KEY_NAME";
-    public static final String PREFERENCE_KEY_SCORE = "REFERENCE_KEY_SCORE";
-    public static final String PREFERENCE_KEY_USER= "PREFERENCE_KEY_USER";
-
+    public static final String PREFERENCE_KEY_SCORE = "PREFERENCE_KEY_SCORE";
+    public static final String PREFERENCE_KEY_USER_LIST = "PREFERENCE_KEY_USER_LIST";
+    public static final String PREFERENCE_APP_NAME = "Top Quiz";
     public static final int GAME_ACTIVITY_REQUEST_CODE = 1;
 
 
@@ -42,7 +42,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         System.out.println("MainActivity :: onCreate()");
 
-        mPreferences = getSharedPreferences("Top_Quiz", MODE_PRIVATE);
+        mPreferences = getSharedPreferences(PREFERENCE_APP_NAME, MODE_PRIVATE);
 
 
         mGreetingTxt = findViewById(R.id.activity_main_greeting_txt);
@@ -107,13 +107,17 @@ public class MainActivity extends AppCompatActivity {
     public void saveData(){
         //SAUVEGARDE DES PREFERENCES POUR LA USERLIST
         Gson gson = new Gson();
-        String json = mPreferences.getString(PREFERENCE_KEY_USER, "");
+        String json = mPreferences.getString(PREFERENCE_KEY_USER_LIST, "");
 
         mUserList = gson.fromJson(json, UserList.class);
-
+        if (mUserList == null){
+            mPlayButton2.setEnabled(false);
+            mUserList=new UserList();
+        }
+        mPlayButton2.setEnabled(true);
         mUserList.addUser(mUser);
         json = gson.toJson(mUserList);
-        mPreferences.edit().putString(PREFERENCE_KEY_USER, json).apply();
+        mPreferences.edit().putString(PREFERENCE_KEY_USER_LIST, json).apply();
 
     }
 

@@ -103,7 +103,7 @@ public class GameActivity extends AppCompatActivity implements View.OnClickListe
                     displayQuestion(mCurrentQuestion);
                 }
             }
-        },100);
+        },200);
 
 
     }
