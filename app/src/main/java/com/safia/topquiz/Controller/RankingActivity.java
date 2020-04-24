@@ -43,12 +43,12 @@ public class RankingActivity extends AppCompatActivity {
         });
 
         //PlayAgain Button
-        Button mPlayAgainButton = findViewById(R.id.activity_az_btn);
-        mPlayAgainButton.setOnClickListener(new View.OnClickListener() {
+        Button alphabeticSort = findViewById(R.id.activity_az_btn);
+        alphabeticSort.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent replayIntent = new Intent(RankingActivity.this, MainActivity.class);
-                startActivityForResult(replayIntent, MainActivity.GAME_ACTIVITY_REQUEST_CODE);
+                compareScore(new AlphabeticSort());
+                displayRV();
             }
         });
 
@@ -81,6 +81,15 @@ public class RankingActivity extends AppCompatActivity {
                 return 1;
             }else
                 return -1;
+        }
+    }
+    public class AlphabeticSort implements Comparator<User> {
+
+        @Override
+        public int compare(User o1, User o2) {
+            User u1 = (User) o1;
+            User u2 = (User) o2;
+            return u1.getFirstName().compareToIgnoreCase(u2.getFirstName());
         }
     }
 
