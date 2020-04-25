@@ -87,8 +87,8 @@ public class RankingActivity extends AppCompatActivity {
 
         @Override
         public int compare(User o1, User o2) {
-            User u1 = (User) o1;
-            User u2 = (User) o2;
+            User u1 =  o1;
+            User u2 =  o2;
             return u1.getFirstName().compareToIgnoreCase(u2.getFirstName());
         }
     }
